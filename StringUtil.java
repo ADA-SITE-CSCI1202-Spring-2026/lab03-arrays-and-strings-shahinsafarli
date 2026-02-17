@@ -1,5 +1,7 @@
 package Java.week05;
 
+import java.util.Arrays;
+
 public class StringUtil {
 
     public static String reverse(String s) {
@@ -26,11 +28,18 @@ public class StringUtil {
         return sb.toString();
     }
 
+    public static String sortString(String s) {
+        char[] arr = s.toCharArray();
+        Arrays.sort(arr);
+        return new String(arr);
+    }
+
     public static void main(String[] args) {
 
         String s1 = "Hello";
         System.out.println(reverse(s1));
         System.out.println(explode(s1));
+        System.out.println(sortString(s1));
 
 
     }
