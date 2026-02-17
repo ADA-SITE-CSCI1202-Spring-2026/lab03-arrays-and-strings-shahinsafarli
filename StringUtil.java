@@ -51,6 +51,30 @@ public class StringUtil {
         }
     }
 
+    public static String swapFirstLast(String sentence) {
+
+        String[] words = sentence.split(" ");
+
+        StringBuilder result = new StringBuilder();
+
+        for (String word: words) {
+            if (word.length() == 1) result.append(word);
+            else {
+                char first  = word.charAt(0);
+                char last = word.charAt(word.length()-1);
+                String middle = word.substring(1, word.length()-1);
+
+                result.append(last);
+                result.append(middle);
+                result.append(first);
+            }
+            result.append(" ");
+        }
+
+        return result.toString().trim();
+
+    }
+
     public static void main(String[] args) {
 
         String s1 = "Hello";
@@ -58,6 +82,7 @@ public class StringUtil {
         System.out.println(explode(s1));
         System.out.println(sortString(s1));
         System.out.println(isAnagram("map", "pam"));
+        System.out.println(swapFirstLast("How are you"));
 
 
     }
